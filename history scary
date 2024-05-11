@@ -1,0 +1,62 @@
+import random
+import time
+
+def introduction():
+    print("Vous vous retrouvez seul dans une forêt sombre et dense,")
+    print("perdu après que votre voiture ait eu une panne. La nuit est sombre,")
+    print("et vous entendez des bruits étranges tout autour de vous.\n")
+    time.sleep(2)
+    print("Vous devez trouver un moyen de sortir de la forêt avant qu'il ne soit trop tard...\n")
+    time.sleep(2)
+
+def choix():
+    print("Que décidez-vous de faire ?")
+    print("1. Continuer à marcher plus profondément dans la forêt.")
+    print("2. Essayer de revenir sur vos pas et retrouver la route.")
+    print("3. Tenter de construire un abri pour passer la nuit.")
+    choix = input("Entrez le numéro correspondant à votre choix : ")
+    return choix
+
+def evenement():
+    print("\nVous entendez un bruit étrange derrière vous...")
+    time.sleep(2)
+    print("Une silhouette sombre apparaît entre les arbres !")
+    time.sleep(2)
+    print("C'est... juste une branche qui tombe. Vous soupirez de soulagement.\n")
+
+def fin():
+    print("Félicitations, vous avez survécu à la nuit dans la forêt sombre !")
+    print("Vous parvenez à retrouver la route et à appeler de l'aide.\n")
+
+def mort():
+    print("Vous vous sentez une main froide vous saisir par l'épaule...")
+    time.sleep(2)
+    print("Vous tournez lentement la tête pour voir ce qui vous a attrapé...")
+    time.sleep(2)
+    print("GAME OVER.\n")
+
+def jeu():
+    introduction()
+    choix_utilisateur = choix()
+
+    if choix_utilisateur == "1":
+        evenement()
+        mort()
+    elif choix_utilisateur == "2":
+        print("\nVous commencez à revenir sur vos pas...")
+        time.sleep(2)
+        print("Vous entendez des bruits de pas derrière vous !")
+        time.sleep(2)
+        mort()
+    elif choix_utilisateur == "3":
+        print("\nVous cherchez des branches et des feuilles pour construire un abri...")
+        time.sleep(2)
+        print("La nuit passe sans incident...")
+        time.sleep(2)
+        fin()
+    else:
+        print("Choix invalide. Veuillez choisir une option valide.\n")
+        jeu()
+
+if __name__ == "__main__":
+    jeu()
